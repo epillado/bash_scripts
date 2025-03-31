@@ -1,15 +1,9 @@
 #!/usr/bin/bash
-# Show ports using netsat as first option or lsof if netstat is not found.:wq
-if which netstat
-then
- sudo netstat -tunlp
-elif which ss
-then
- sudo ss -tunlp
-elif which lsof
-then
- sudo lsof -nP -iTCP -sTCP:LISTEN
-fi
+# Show ports using netsat or ss or lsof.
+ sudo netstatx -tunlp 2>/dev/null \
+	 || sudo ssx -tunlp 2>/dev/null \
+	 || && sudo lsof -nP -iTCP -sTCP:LISTEN 2>/dev/null \
+	 || echo 'No way to list ports could be found.'
 
 # For lsof:
 # -n - Do not convert port numbers to port names.
