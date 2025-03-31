@@ -1,8 +1,8 @@
 #!/usr/bin/bash
 # Show ports using netsat or ss or lsof.
- sudo netstatx -tunlp 2>/dev/null \
-	 || sudo ssx -tunlp 2>/dev/null \
-	 || && sudo lsof -nP -iTCP -sTCP:LISTEN 2>/dev/null \
+ sudo netstat -tunlp 2>/dev/null \
+	 || sudo ss -tunlp 2>/dev/null \
+	 || sudo lsof -nP -iTCP -sTCP:LISTEN 2>/dev/null \
 	 || echo 'No way to list ports could be found.'
 
 # For lsof:
