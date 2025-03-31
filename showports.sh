@@ -1,16 +1,13 @@
 #!/usr/bin/bash
 # Show ports using netsat as first option or lsof if netstat is not found.:wq
-if which -s netstat
+if which netstat
 then
- echo 'using netstat:'
  sudo netstat -tunlp
-elif which -s ss
+elif which ss
 then
- echo 'using ss'
  sudo ss -tunlp
-elif which -s lsof
+elif which lsof
 then
- echo 'using lsof'
  sudo lsof -nP -iTCP -sTCP:LISTEN
 fi
 
