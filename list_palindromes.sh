@@ -1,4 +1,5 @@
 #! /usr/bin/bash
+# # list_palindromes.sh : An example bash script that prints lines that are palindromes in a file. # #
 if [ $# -eq 0 ]
 then
     echo "Provide a file name as an argument. Any lines that are a palindrome will be printed out."

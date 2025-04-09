@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-# Show ports using netsat or ss or lsof.
+# # showports.sh: Example bash script that show ports using netsat or ss or lsof, whichever available. # #
  sudo netstat -tunlp 2>/dev/null \
 	 || sudo ss -tunlp 2>/dev/null \
 	 || sudo lsof -nP -iTCP -sTCP:LISTEN 2>/dev/null \

@@ -3,7 +3,7 @@
 # Author: Eduardo Pillado.
 # https://github.com/epillado
 #
-# This is an example for job control in Bash.
+# # proc_control.sh : This is an example for job control in Bash. # #
 # We want to launch 5 processes in paralell and count how
 # many of them failed.
 # BASH>= 4 required
